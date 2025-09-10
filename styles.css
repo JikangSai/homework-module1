@@ -230,5 +230,37 @@ td:first-child {
 #contact form .button input[type="submit"]{background:#4977D1;color:#fff;border:0;border-radius:3px;width:120px;height:36px;font-weight:700;cursor:pointer}
 #contact form .button input[type="submit"]:hover{filter:brightness(.95)}
 
+#cliffs header {
+  background: no-repeat center url(images/forest_cliff.jpg);
+  background-size: cover;
+}
+
+.cliff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 3em auto;
+  max-width: 1000px;
+}
+
+.cliff-card {
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.cliff-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cliff-title {
+  background-color: #8B2E2E;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.1em;
+}
 
 
