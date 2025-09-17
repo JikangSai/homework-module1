@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="activities">
-
   <div class="container">
 
     <header>
@@ -87,17 +86,9 @@
       </table>
     </main>
 
-  <section>
-    <ul id="partners">
-    <li class="partner"><img src="images/partners/partner-bustour.png" alt="Partner Bus Tours"></li>
-    <li class="partner"><img src="images/partners/partner-cabinrental.png" alt="Partner Cabin Rental"></li>
-    <li class="partner"><img src="images/partners/partner-campingadv.png" alt="Partner Camping Adventure"></li>
-    <li class="partner"><img src="images/partners/partner-collegetours.png" alt="Partner College Tours"></li>
-    <li class="partner"><img src="images/partners/partner-rentalbike.png" alt="Partner Bike Rentals"></li>
-    <li class="partner"><img src="images/partners/partner-tourgroup.png" alt="Partner Tour Group"></li>
-    </ul>
-  </section>
-
+    <section>
+      <ul id="partners"></ul>
+    </section>
 
     <footer>
       <div id="nondisclaimer">
@@ -117,5 +108,35 @@
     </footer>
 
   </div>
+
+  <script>
+    var photos = [];
+    var fileNames = [];
+    var imageList = [];
+    var image;
+    var openList = "<li class='partner'>";
+    var closeList = "</li>";
+
+    for (var i = 0; i < 6; i++) {
+      fileNames.push("partner-" + (i+1));
+    }
+
+    var partnerFiles = [
+      "partner-bustour",
+      "partner-cabinrental",
+      "partner-campingadv",
+      "partner-collegetours",
+      "partner-rentalbike",
+      "partner-tourgroup"
+    ];
+
+    for (var i = 0; i < partnerFiles.length; i++) {
+      photos.push("<img src='images/partners/" + partnerFiles[i] + ".png'>");
+      image = openList + photos[i] + closeList;
+      imageList.push(image);
+    }
+
+    document.getElementById("partners").innerHTML = imageList.join("");
+  </script>
 </body>
 </html>
