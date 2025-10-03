@@ -277,3 +277,15 @@ td:first-child {
   cursor: not-allowed; 
   filter: none;        
 }
+
+td.selected {
+  background: #8bc34a;
+  color: #fff;
+  font-weight: bold;
+}
+td.selectable { cursor: pointer; }
+td.na {
+  background: #eee;
+  color: #666;
+  cursor: default;
+}
