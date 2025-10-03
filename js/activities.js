@@ -1,14 +1,25 @@
-$(document).ready(function () {
-  const $table = $("#activities");
+$(document).ready(function() {
+  $("td").click(function () {
+    var content = $(this).text();
+    if (content != "Not Available") {
+      $(this).toggleClass("tdhighlight");
 
-  $table.find("tbody td").filter(function () {
-    return $(this).text().trim().toLowerCase() === "not available";
-  }).addClass("na");
+      var colIndex = $(this).index();
+      var cliffName = $("#activities thead th").eq(colIndex).text();
+      var textToShow = content + " at " + cliffName;
 
-  const $selectables = $table.find("tbody td:not(:first-child)").not(".na");
-  $selectables.addClass("selectable");
-
-  $table.on("click", "td.selectable", function () {
-    $(this).toggleClass("selected");
+      if ($(this).hasClass("tdhighlight")) {
+        $('#displaySelected').css("visibility","visible");
+        $('#displaySelected').css("margin-top","2em");
+        $('#result').append("<p>"+textToShow+"</p>");
+      } else {
+        $('#result p:contains('+content+')').remove();
+        if ($('#result').has('p').length == false) {
+          $('#displaySelected').css("visibility","hidden");
+          $('#displaySelected').css("margin-top","0");
+        }
+      }
+    }
   });
 });
+
