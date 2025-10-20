@@ -5,17 +5,17 @@
   <title>Activities – Great Cliffs</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    body#activities{padding-top:96px}
-    .great-nav{background-color:rgba(38,41,61,.7)}
-    .great-nav .nav-link,.great-nav .navbar-brand{color:#fff}
-    #partners>li{list-style:none}
-    .partner-logo{max-height:72px;object-fit:contain}
-    table#activities thead th{text-align:center}
+    .table-center-wrap{max-width:1100px;margin:2rem auto}
+    #actTable th,#actTable td{text-align:center;vertical-align:middle}
+    #actTable td.selectable{cursor:pointer}
+    #actTable td.selected{background:#8bc34a;color:#fff;font-weight:700}
+    caption.caption-bottom{caption-side:bottom;background:#343a40;color:#fff;font-weight:700;padding:.6rem}
   </style>
 </head>
 <body id="activities">
-  <nav class="navbar navbar-dark navbar-expand-xl sticky-top great-nav">
+  <nav class="navbar navbar-dark navbar-expand-xl sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Great Cliffs Logo" width="125"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gcNav" aria-controls="gcNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -35,119 +35,141 @@
 
     <main>
       <h1>Activities</h1>
-      <p>
-        There are many planned activities at all the cliff sites. Some are scheduled daily, weekly, monthly and yearly. 
-        These activities are not however run by the state park and recreational department. They are operated and managed 
-        by private vendors but are partners with the state department. Therefore, for schedule inquiries or information, 
-        please contact them directly. For a list of activities, please refer to the table below:
-      </p>
+      <p>There are many planned activities at all the cliff sites. Some are scheduled daily, weekly, monthly and yearly. These activities are not however run by the state park and recreational department. They are operated and managed by private vendors but are partners with the state department. Therefore, for schedule inquiries or information, please contact them directly. For a list of activities, please refer to the table below:</p>
 
-      <table id="activities">
-        <caption>Activities at the Cliffs</caption>
-        <thead>
-          <tr>
-            <th>Activity</th>
-            <th>West Cliff</th>
-            <th>North Cliff</th>
-            <th>East Cliff</th>
-            <th>South Cliff</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Hiking</td>
-            <td>College Hikes</td>
-            <td>Western Kayak Meetup</td>
-            <td>Seacliff Diving</td>
-            <td>Bicycle for One</td>
-          </tr>
-          <tr>
-            <td>Kayak</td>
-            <td>Youth Camp</td>
-            <td>Family Fun</td>
-            <td>Not Available</td>
-            <td>Sky is the limit</td>
-          </tr>
-          <tr>
-            <td>Skydiving</td>
-            <td>Not Available</td>
-            <td>Rent a Tent</td>
-            <td>Treasure Trails</td>
-            <td>Youth Kayaking</td>
-          </tr>
-          <tr>
-            <td>Biking</td>
-            <td>Not Available</td>
-            <td>Sky Diving for Beginners</td>
-            <td>Bike Meetup Group</td>
-            <td>Campground Adventure</td>
-          </tr>
-          <tr>
-            <td>Camping</td>
-            <td>Canyon Explorer</td>
-            <td>Kayak Down</td>
-            <td>Not Available</td>
-            <td>Sunset Camping</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive table-center-wrap">
+        <table id="actTable" class="table table-bordered table-striped mb-0">
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>West Cliff</th>
+              <th>North Cliff</th>
+              <th>East Cliff</th>
+              <th>South Cliff</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hiking</strong></td>
+              <td class="selectable">College Hikes</td>
+              <td class="selectable">Western Kayak Meetup</td>
+              <td class="selectable">Seacliff Diving</td>
+              <td class="selectable">Bicycle for One</td>
+            </tr>
+            <tr>
+              <td><strong>Kayak</strong></td>
+              <td class="selectable">Youth Camp</td>
+              <td class="selectable">Family Fun</td>
+              <td class="na">Not Available</td>
+              <td class="selectable">Sky is the limit</td>
+            </tr>
+            <tr>
+              <td><strong>Skydiving</strong></td>
+              <td class="na">Not Available</td>
+              <td class="selectable">Rent a Tent</td>
+              <td class="selectable">Treasure Trails</td>
+              <td class="selectable">Youth Kayaking</td>
+            </tr>
+            <tr>
+              <td><strong>Biking</strong></td>
+              <td class="na">Not Available</td>
+              <td class="selectable">Sky Diving for Beginners</td>
+              <td class="selectable">Bike Meetup Group</td>
+              <td class="selectable">Campground Adventure</td>
+            </tr>
+            <tr>
+              <td><strong>Camping</strong></td>
+              <td class="selectable">Canyon Explorer</td>
+              <td class="selectable">Kayak Down</td>
+              <td class="na">Not Available</td>
+              <td class="selectable">Sunset Camping</td>
+            </tr>
+          </tbody>
+          <caption class="caption-bottom">Activities at the Cliffs</caption>
+        </table>
+      </div>
 
-      <div id="displaySelected">
-        <div id="result">
-          <h4>My selected activities to enquire:</h4>
-          <ul id="selectedList"></ul>
-        </div>
-        <div id="sendinfo">
-          <input id="emailBox" type="email" placeholder="johndoe@gmail.com">
-          <button id="getInfoBtn">Get Info</button>
+      <div class="text-center mt-3">
+        <button id="getInfoBtn" class="btn btn-primary"><i class="fa fa-info-circle" aria-hidden="true"></i><span class="ml-2">Get Info</span></button>
+      </div>
+
+      <div class="modal fade" id="selectedModal" tabindex="-1" role="dialog" aria-labelledby="selectedModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 id="selectedModalLabel" class="modal-title">My selected activities to enquire:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body" id="selectedModalBody"></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" id="backBtn">Back to Activities</button>
+              <button type="button" class="btn btn-primary" id="sendBtn">Get Info</button>
+            </div>
+          </div>
         </div>
       </div>
     </main>
-
-    <section>
-      <ul id="partners" class="row text-center align-items-center"></ul>
-    </section>
-
-    <footer>
-      <div id="nondisclaimer">
-        <div class="copy">
-          <p>&copy; 2020 GreatCliffs.com</p>
-        </div>
-        <div class="social">
-          <h3>Facebook Image | Instagram Image | Twitter Image</h3>
-        </div>
-      </div>
-      <div id="disclaimer">
-        <p>
-          This website is designed and created solely for educational purposes only at Westcliff University.
-          All contents are not intended for any commercial gain or use.
-        </p>
-      </div>
-    </footer>
   </div>
+
+  <section>
+    <ul id="partners" class="row text-center align-items-center">
+      <li class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4"><img class="img-fluid" src="images/partners/partner-bustour.png" alt="Partner Bus Tours"></li>
+      <li class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4"><img class="img-fluid" src="images/partners/partner-cabinrental.png" alt="Partner Cabin Rental"></li>
+      <li class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4"><img class="img-fluid" src="images/partners/partner-campingadv.png" alt="Partner Camping Adventure"></li>
+      <li class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4"><img class="img-fluid" src="images/partners/partner-collegetours.png" alt="Partner College Tours"></li>
+      <li class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4"><img class="img-fluid" src="images/partners/partner-rentalbike.png" alt="Partner Bike Rentals"></li>
+      <li class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4"><img class="img-fluid" src="images/partners/partner-tourgroup.png" alt="Partner Tour Group"></li>
+    </ul>
+  </section>
+
+  <footer>
+    <div id="nondisclaimer">
+      <div class="copy"><p>&copy; 2020 GreatCliffs.com</p></div>
+      <div class="social"><h3>Facebook Image | Instagram Image | Twitter Image</h3></div>
+    </div>
+    <div id="disclaimer">
+      <p>This website is designed and created solely for educational purposes only at Westcliff University. All contents are not intended for any commercial gain or use.</p>
+    </div>
+  </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     (function(){
-      function apply(){
-        var list=document.getElementById('partners'); if(!list)return;
-        var items=list.querySelectorAll('li');
-        for(var i=0;i<items.length;i++){
-          items[i].classList.add('col-12','col-sm-6','col-md-4','col-lg-2','mb-4');
-          var img=items[i].querySelector('img'); if(img){img.classList.add('img-fluid','partner-logo')}
-        }
-        list.classList.add('row','text-center','align-items-center');
+      var table=document.getElementById('actTable');
+      table.addEventListener('click',function(e){
+        var td=e.target.closest('td');
+        if(!td) return;
+        var cellIndex=td.cellIndex;
+        if(cellIndex===0) return;
+        if(td.classList.contains('na')) return;
+        if(td.classList.contains('selectable')) td.classList.toggle('selected');
+      });
+
+      function collectSelections(){
+        var items=[];
+        var ths=[].slice.call(table.querySelectorAll('thead th'));
+        table.querySelectorAll('tbody tr').forEach(function(tr){
+          tr.querySelectorAll('td.selected').forEach(function(td){
+            var colName=ths[td.cellIndex].textContent.trim();
+            var text=td.textContent.trim();
+            items.push(text+' at '+colName);
+          });
+        });
+        return items;
       }
-      if(document.readyState==='complete'){apply()}else{window.addEventListener('load',apply)}
-      var target=document.getElementById('partners');
-      if(target&&'MutationObserver'in window){
-        var ob=new MutationObserver(function(){apply()});
-        ob.observe(target,{childList:true});
+
+      function openModal(){
+        var arr=collectSelections();
+        var body=document.getElementById('selectedModalBody');
+        body.innerHTML=arr.length?('<ul class="mb-0">'+arr.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul>'):'<em>No selections yet.</em>';
+        $('#selectedModal').modal('show');
       }
+
+      document.getElementById('getInfoBtn').addEventListener('click',function(e){e.preventDefault();openModal()});
+      document.getElementById('backBtn').addEventListener('click',function(){ $('#selectedModal').modal('hide') });
+      document.getElementById('sendBtn').addEventListener('click',function(){ $('#selectedModal').modal('hide') });
     })();
   </script>
-  <script src="js/activities.js"></script>
-  <script src="js/site_scripts.js"></script>
 </body>
 </html>

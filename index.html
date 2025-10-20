@@ -34,13 +34,9 @@
     <main>
       <h2>Introducing California's Greatest Cliffs</h2>
       <h3>What is so unique about California cliffs?</h3>
-      <p>
-        California cliffs are one of a kind in the United States where no cliffs are as magnificent and beautiful as them...
-      </p>
+      <p>California cliffs are one of a kind in the United States where no cliffs are as magnificent and beautiful as them...</p>
       <h3>Where are these cliffs?</h3>
-      <p>
-        Located within a 100 mile radius from Irvine, California, they can be reached by roads easily...
-      </p>
+      <p>Located within a 100 mile radius from Irvine, California, they can be reached by roads easily...</p>
     </main>
 
     <section>
@@ -59,10 +55,7 @@
         </div>
       </div>
       <div id="disclaimer">
-        <p>
-          This website is designed and created solely for educational purposes only at Westcliff University.
-          All contents are not intended for any commercial gain or use.
-        </p>
+        <p>This website is designed and created solely for educational purposes only at Westcliff University. All contents are not intended for any commercial gain or use.</p>
       </div>
     </footer>
   </div>
@@ -78,10 +71,11 @@
           items[i].classList.add('col-12','col-sm-6','col-md-4','col-lg-2','mb-4');
           var img=items[i].querySelector('img'); if(img){img.classList.add('img-fluid')}
         }
+        list.classList.add('row','text-center','align-items-center');
       }
       if(document.readyState==='complete'){apply()}else{window.addEventListener('load',apply)}
       var t=document.getElementById('partners');
-      if(t&&'MutationObserver'in window){new MutationObserver(function(){apply()}).observe(t,{childList:true})}
+      if(t&&'MutationObserver'in window){new MutationObserver(apply).observe(t,{childList:true})}
     })();
   </script>
   <script src="js/digclock.js"></script>

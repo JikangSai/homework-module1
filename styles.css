@@ -126,7 +126,6 @@ section #partners .partner img {
   height: 90px;
 }
 
-/* Bootstrap 栅格版本的 partners 覆盖 */
 #partners.row{
   width:auto;
   padding:2em 0;
@@ -206,12 +205,13 @@ footer #nondisclaimer .social .fa-instagram {
   margin: 4em auto 0 auto;
 }
 #activities caption {
-  background: #852B1B;
-  height: 40px;
+  background: #852B1B;       
   color: #fff;
   font-size: 1.3em;
   font-weight: bold;
-  padding-top: 1em;
+  padding: 0.75em;          
+  text-align: center;      
+  height: auto;          
 }
 thead {
   background: #BDE1FF;
@@ -329,3 +329,14 @@ td.na { background: #eee; color: #666; cursor: default; }
 #activities main #displaySelected #sendinfo input[type="email"]{
   width:200px;
 }
+
+#home, #cliffs, #activities, #contact {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Comfortable hero height that scales down on small screens */
+header { min-height: 42vh; }
+@media (max-width: 991.98px){ header{ min-height: 34vh; } }
+@media (max-width: 575.98px){ header{ min-height: 28vh; } }
