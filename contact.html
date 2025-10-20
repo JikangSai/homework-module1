@@ -4,25 +4,33 @@
   <meta charset="utf-8">
   <title>Contact – Great Cliffs</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body#contact{padding-top:96px}
+    .great-nav{background-color:rgba(38,41,61,.7)}
+    .great-nav .nav-link,.great-nav .navbar-brand{color:#fff}
+    #partners>li{list-style:none}
+  </style>
 </head>
-<body id="contact" onload="disableButton(true)">
-  <div class="container">
-
-    <header>
-      <div class="main-header">
-        <div class="logo">
-          <img src="images/logo.png" alt="Great Cliffs Logo" width="125">
-        </div>
-        <nav class="main-menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="cliffs.html">Cliffs</a></li>
-            <li><a href="activities.html">Activities</a></li>
-            <li class="active"><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
+<body id="contact">
+  <nav class="navbar navbar-dark navbar-expand-xl sticky-top great-nav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Great Cliffs Logo" width="125"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gcNav" aria-controls="gcNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div id="gcNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="cliffs.html">Cliffs</a></li>
+          <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+          <li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
       </div>
-    </header>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header></header>
 
     <main>
       <h1>Contacting Us</h1>
@@ -77,21 +85,20 @@
             <textarea></textarea>
           </div>
 
-          <!-- Random Codes -->
         <div class="randomcode">
           <input type="text" id="codeentered" name="randomcode" placeholder="Enter characters">
           <p id="codes"></p>
         </div>
 
           <div class="button">
-            <input id="submit" type="submit" value="Inquire">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i><span class="ml-2">Inquire</span></button>
           </div>
         </fieldset>
       </form>
     </main>
 
     <section>
-      <ul id="partners"></ul>
+      <ul id="partners" class="row text-center align-items-center"></ul>
     </section>
 
     <footer>
@@ -113,6 +120,23 @@
 
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function(){
+      function apply(){
+        var list=document.getElementById('partners'); if(!list)return;
+        var items=list.querySelectorAll('li');
+        for(var i=0;i<items.length;i++){
+          items[i].classList.add('col-12','col-sm-6','col-md-4','col-lg-2','mb-4');
+          var img=items[i].querySelector('img'); if(img){img.classList.add('img-fluid')}
+        }
+      }
+      if(document.readyState==='complete'){apply()}else{window.addEventListener('load',apply)}
+      var t=document.getElementById('partners');
+      if(t&&'MutationObserver'in window){new MutationObserver(function(){apply()}).observe(t,{childList:true})}
+    })();
+  </script>
   <script src="js/site_scripts.js"></script>
   <script src="js/randomcodes.js"></script>
 </body>

@@ -1,24 +1,42 @@
 header {
-    width: 100%;          /* make header span full width */
-    min-height: 400px;    /* ensure it’s at least 400px tall */
-    padding-top: 3em;     /* push text downward inside the header */
-    }
-#home header {
-  background: no-repeat lightgrey url(images/cliff_ocean.jpg);
-  background-size: 1500px;
+    width: 100%;
+    min-height: 400px;
+    padding-top: 3em;
 }
 
-#activities header {
-  background: no-repeat lightgrey url(images/runfly.jpg);
-  background-size: 1500px;
+#home {
+  background: no-repeat white url(images/cliff_ocean.jpg);
+  background-size: 100% 400px;
 }
 
-#contact header {
-  background: no-repeat lightgrey url(images/cliff_rock.jpg);
-  background-size: 1500px;
+#activities {
+  background: no-repeat white url(images/runfly.jpg);
+  background-size: 100% 400px;
 }
 
-  .main-header {
+#contact {
+  background: no-repeat white url(images/cliff_rock.jpg);
+  background-size: 100% 400px;
+}
+
+#cliffs {
+  background: no-repeat center url(images/forest_cliff.jpg);
+  background-size: cover;
+}
+
+#home,#cliffs,#activities,#contact{
+  padding-top:96px;
+}
+
+.navbar{
+  background-color: rgba(38,41,61,.7);
+}
+.navbar .nav-link,
+.navbar .navbar-brand{
+  color:#fff;
+}
+
+.main-header {
   background-color: rgba(255, 255, 255, 0.8);
   width: 800px;
   margin: 2em auto 0 auto;
@@ -31,52 +49,51 @@ header {
   margin: 0 2em 0 0;
   float: left;
 }
-/* Navigation */
 .main-menu {
   margin-left: 227px;
   font-weight: 400;
 }
 .main-menu ul li {
-  list-style-type: none;              /* removes bullets */
-  display: inline-block;              /* makes <li> appear horizontally */
-  float: left;                        /* keeps items aligned left inside nav */
+  list-style-type: none;
+  display: inline-block;
+  float: left;
   padding-left: 25px;
   padding-right: 25px;
-  border-left: 1px solid rgba(202, 204, 202, 0.6); /* faint vertical divider */
-  line-height: 100px;                 /* vertically centers text in 100px box */
-  text-transform: uppercase;          /* makes labels ALL CAPS */
-  font-size: 14px;                    /* smaller, clean font */
+  border-left: 1px solid rgba(202, 204, 202, 0.6);
+  line-height: 100px;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 .main-menu ul li a {
-  text-decoration: none;  
-  color: #888;             
+  text-decoration: none;
+  color: #888;
 }
 .main-menu ul li a:hover {
-  color: #9ed034;          
+  color: #9ed034;
 }
 .main-menu ul li.active {
-  background: #9ed034;   
-  border: none;          
+  background: #9ed034;
+  border: none;
 }
 .main-menu ul li.active a {
-  color: #fff;       
+  color: #fff;
 }
-/* Main */
+
 main {
-  background: #fff;              
-  padding: 48px 40px;              
+  background: #fff;
+  padding: 48px 40px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #333;                      
+  color: #333;
 }
 main h2 {
-  color: #9ed034;                
+  color: #9ed034;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 24px;
 }
 main h3 {
-  color: #000;                      
+  color: #000;
   font-size: 28px;
   font-weight: 800;
   margin: 32px 0 10px;
@@ -86,10 +103,10 @@ main p {
   line-height: 1.75;
   margin: 0 0 18px;
 }
-/* Partners */
+
 section {
   width: 100%;
-  background-color: #4288C3; 
+  background-color: #4288C3;
 }
 section #partners {
   width: 1200px;
@@ -108,14 +125,34 @@ section #partners .partner img {
   width: 90px;
   height: 90px;
 }
-/* Footer */
+
+/* Bootstrap 栅格版本的 partners 覆盖 */
+#partners.row{
+  width:auto;
+  padding:2em 0;
+  margin:0 auto;
+  text-align:initial;
+}
+#partners.row .partner{
+  display:block;
+  background:transparent;
+  border-radius:0;
+  padding:0;
+  margin:0;
+}
+#partners.row .partner img{
+  width:100%;
+  height:auto;
+  max-height:72px;
+  object-fit:contain;
+}
+
 footer {
   width: 100%;
   height: 155px;
   padding-bottom: 1em;
   background-color: #ecfab8;
 }
-/* Footer */
 footer {
   width: 100%;
   height: 155px;
@@ -163,6 +200,7 @@ footer #nondisclaimer .social .fa-instagram {
   background: #125688;
   color: white;
 }
+
 #activities table {
   width: 1000px;
   margin: 4em auto 0 auto;
@@ -188,7 +226,6 @@ th,td {
   vertical-align: middle;
   border: solid 1px #852B1B;
 }
-
 th:first-child {
   width: 125px;
   height: 50px;
@@ -199,41 +236,30 @@ td:first-child {
   font-weight: bold;
   background: #BDE1FF;
 }
-#contact h1{color:#9ed034;margin:24px 0 12px 0}
 
+#contact h1{color:#9ed034;margin:24px 0 12px 0}
 #contact .contactinfo{margin:10px 0 18px 0;line-height:1.6}
 #contact .contactinfo .phone,
 #contact .contactinfo .email{display:flex;gap:8px}
 #contact .contactinfo .phone span:first-child,
 #contact .contactinfo .email span:first-child{color:#4977D1;font-weight:700}
-
 #contact form fieldset{border:1px solid #cfe293;padding:16px 16px 20px 16px}
 #contact form legend{color:#4977D1;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-
 #contact form .textbox{display:block;margin:6px 0 12px 0}
 #contact form .textbox label{display:block;margin:10px 0 4px 0;font-weight:700;color:#555}
 #contact form .textbox input{width:600px;height:34px;padding:6px 10px;border:1px solid #bbb}
-
 #contact form .radios{display:flex;align-items:center;gap:12px;margin:10px 0}
 #contact form .radios label{font-weight:700;color:#555}
 #contact form input[type="radio"]{width:18px}
-
 #contact form .selectmenu{display:flex;align-items:center;gap:12px;margin:10px 0}
 #contact form .selectmenu label{font-weight:700;color:#555}
 #contact form .selectmenu select{width:220px;height:34px;border:1px solid #bbb}
-
 #contact form .commentbox{display:block;margin:10px 0}
 #contact form .commentbox label{display:block;margin:10px 0 6px 0;font-weight:700;color:#555}
 #contact form .commentbox textarea{width:600px;height:160px;padding:8px 10px;border:1px solid #bbb;resize:vertical}
-
 #contact form .button{display:flex;justify-content:center;margin-top:12px}
 #contact form .button input[type="submit"]{background:#4977D1;color:#fff;border:0;border-radius:3px;width:120px;height:36px;font-weight:700;cursor:pointer}
 #contact form .button input[type="submit"]:hover{filter:brightness(.95)}
-
-#cliffs header {
-  background: no-repeat center url(images/forest_cliff.jpg);
-  background-size: cover;
-}
 
 .cliff-grid {
   display: grid;
@@ -242,18 +268,15 @@ td:first-child {
   margin: 3em auto;
   max-width: 1000px;
 }
-
 .cliff-card {
   border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-
 .cliff-card img {
   width: 100%;
   height: auto;
   display: block;
 }
-
 .cliff-title {
   background-color: #8B2E2E;
   color: white;
@@ -262,6 +285,7 @@ td:first-child {
   padding: 10px;
   font-size: 1.1em;
 }
+
 #timeofday{
   font-family: Arial, Helvetica, sans-serif;
   color:#3a3a3a;
@@ -270,25 +294,17 @@ td:first-child {
   background:linear-gradient(0deg, rgba(251,215,139,1) 0%, rgba(118,213,245,1) 100%);
 }
 
-/* Disabled button style */
 #contact form .button input[type="submit"]:disabled {
-  background: #ccc;   
-  color: #666;        
-  cursor: not-allowed; 
-  filter: none;        
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  filter: none;
 }
 
-td.selected {
-  background: #8bc34a;
-  color: #fff;
-  font-weight: bold;
-}
+td.selected { background: #8bc34a; color: #fff; font-weight: bold; }
 td.selectable { cursor: pointer; }
-td.na {
-  background: #eee;
-  color: #666;
-  cursor: default;
-}
+td.na { background: #eee; color: #666; cursor: default; }
+
 #activities main #displaySelected{
   visibility:hidden;
   margin:0 auto;
@@ -313,4 +329,3 @@ td.na {
 #activities main #displaySelected #sendinfo input[type="email"]{
   width:200px;
 }
-
